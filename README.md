@@ -87,3 +87,4 @@ Visit the GitHub Pages deployment at **[https://fridayowl.github.io/exode-animat
 
 - Icons are based on the [Lucide](https://github.com/lucide-icons/lucide) project, licensed under the [ISC License](https://opensource.org/licenses/ISC).
 - Interactive animations and runtime definitions are provided by [ExodeUI](https://www.exodeui.com).
+

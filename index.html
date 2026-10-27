@@ -68,13 +68,133 @@ button, input, select, textarea, a { font: inherit; color: inherit; }
   }
 }
 
+/* Top Nav Banner */
+.top-nav-banner {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14.5px;
+}
+.nav-brand:hover .nav-brand-name {
+  color: var(--accent);
+}
+.nav-brand-name {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: color 0.15s ease;
+}
+.nav-divider {
+  color: var(--line-strong);
+}
+.nav-title {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 13.5px;
+}
+.nav-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border: 1px solid rgba(255, 90, 54, 0.22);
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-gh-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: all 0.15s ease;
+}
+.nav-gh-link:hover {
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+.nav-website-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #ffffff !important;
+  background: var(--accent);
+  text-decoration: none;
+  padding: 6px 13px;
+  border-radius: 7px;
+  box-shadow: 0 1px 3px rgba(255, 90, 54, 0.25);
+  transition: all 0.15s ease;
+}
+.nav-website-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-0.5px);
+}
+.nav-studio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #ffffff !important;
+  background: #18191c;
+  text-decoration: none;
+  padding: 6px 11px;
+  border-radius: 7px;
+  transition: background 0.15s ease;
+}
+.nav-studio-btn:hover {
+  background: #000000;
+}
+@media (max-width: 680px) {
+  .nav-title, .nav-divider, .nav-badge {
+    display: none;
+  }
+  .nav-gh-link span {
+    display: none;
+  }
+}
+
 /* ==========================================================================
    Left Sidebar: Customizer Box + Categories
    ========================================================================== */
 .sidebar {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 49px;
+  height: calc(100vh - 49px);
   overflow-y: auto;
   padding: 16px 14px 32px 18px;
   border-right: 1px solid var(--line);
@@ -486,6 +606,28 @@ input[type="range"]::-moz-range-thumb {
   color: var(--muted);
   line-height: 1.45;
 }
+.btn-visit-website-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #ffffff;
+  color: var(--ink) !important;
+  border: 1px solid var(--line-strong);
+  border-radius: 7px;
+  padding: 7px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  margin-top: 2px;
+}
+.btn-visit-website-link:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent) !important;
+}
+
 .btn-open-studio-link {
   display: inline-flex;
   align-items: center;
@@ -576,10 +718,10 @@ input[type="range"]::-moz-range-thumb {
   align-items: center;
   gap: 14px;
   position: sticky;
-  top: 0;
+  top: 49px;
   z-index: 10;
   background: var(--page-bg);
-  padding: 2px 0 6px;
+  padding: 8px 0 6px;
 }
 
 .search-box {
@@ -633,6 +775,27 @@ input[type="range"]::-moz-range-thumb {
   border: 1px solid var(--line);
   padding: 8px 12px;
   border-radius: 8px;
+}
+
+.btn-top-website {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface);
+  color: var(--ink) !important;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.btn-top-website:hover {
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  background: var(--surface-hover);
 }
 
 .btn-top-open-studio {
@@ -890,6 +1053,29 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.btn-visit-website-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--surface);
+  color: var(--ink) !important;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.btn-visit-website-action:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent) !important;
 }
 
 .btn-open-exode-studio {
@@ -1377,9 +1563,31 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .insp-actions-group {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  display: flex !important;
+  flex-direction: column !important;
   gap: 8px !important;
+}
+
+.btn-visit-website-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 11.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border: 1px solid var(--line-strong);
+  white-space: nowrap;
+}
+.btn-visit-website-action:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .btn-open-exode-studio {
@@ -1524,6 +1732,29 @@ input[type="range"]::-moz-range-thumb {
 </style>
 </head>
 <body>
+<header class="top-nav-banner">
+  <div class="nav-left">
+    <a href="https://www.exodeui.com/?utm_source=gh_pages_icons&utm_medium=banner&utm_campaign=brand" target="_blank" rel="noopener noreferrer" class="nav-brand" title="ExodeUI Homepage">
+      <svg width="22" height="22" viewBox="0 0 40 40"><path d="M17 2.4H34A5.1 5.1 0 0 1 34 12.6H12A.5 .5 0 0 1 11.5 12.1V7.8A5.4 5.4 0 0 1 17 2.4Z" fill="#ff7a2b"/><circle cx="20.3" cy="20.2" r="6.5" fill="#ff7a2b"/><path d="M11.8 27.5H33.6A5.1 5.1 0 0 1 33.6 37.7H16.7A5.4 5.4 0 0 1 11.3 32.3V28.0A.5 .5 0 0 1 11.8 27.5Z" fill="#ff4a1c"/></svg>
+      <span class="nav-brand-name">ExodeUI</span>
+      <span class="nav-divider">/</span>
+      <span class="nav-title">Animated Icons</span>
+    </a>
+    <span class="nav-badge">900+ Free Icons</span>
+  </div>
+  <div class="nav-right">
+    <a href="https://github.com/fridayowl/exode-animated-icons" target="_blank" rel="noopener noreferrer" class="nav-gh-link" title="Star on GitHub">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      <span>GitHub</span>
+    </a>
+    <a href="https://www.exodeui.com/?utm_source=gh_pages_icons&utm_medium=top_cta&utm_campaign=visit_website" target="_blank" rel="noopener noreferrer" class="nav-website-btn" title="Explore ExodeUI Motion Platform">
+      <span>Visit exodeui.com ↗</span>
+    </a>
+    <a href="https://app.exodeui.com/?utm_source=gh_pages_icons&utm_medium=top_cta&utm_campaign=open_studio" target="_blank" rel="noopener noreferrer" class="nav-studio-btn" title="Open the full animation studio">
+      <span>Open Studio ↗</span>
+    </a>
+  </div>
+</header>
 <div class="app">
   <!-- Left Sidebar: Customizer + Categories -->
   <aside class="sidebar" id="sidebar">
@@ -1605,14 +1836,16 @@ input[type="range"]::-moz-range-thumb {
       <!-- Studio Promo Banner -->
       <div class="exode-studio-promo">
         <div class="promo-header">
-          <span class="promo-badge">EXODE STUDIO</span>
-          <span class="promo-title">Want full timeline control?</span>
+          <span class="promo-badge">EXODE MOTION</span>
+          <span class="promo-title">Design beyond icons</span>
         </div>
-        <p class="promo-desc">Customize keyframes, physics spring damping, state machines & multi-part timelines free in the web editor.</p>
-        <a href="https://app.exodeui.com/?utm_source=exodeui.com&utm_medium=website&utm_campaign=icons_gallery&utm_content=customizer_sidebar" target="_blank" rel="noopener noreferrer" class="btn-open-studio-link">
+        <p class="promo-desc">Interactive spring physics, state machines & UI runtimes for React, Vue, SwiftUI & Flutter.</p>
+        <a href="https://www.exodeui.com/?utm_source=gh_pages_icons&utm_medium=sidebar_promo&utm_campaign=visit_website" target="_blank" rel="noopener noreferrer" class="btn-visit-website-link">
+          <span>Explore ExodeUI.com →</span>
+        </a>
+        <a href="https://app.exodeui.com/?utm_source=gh_pages_icons&utm_medium=sidebar_promo&utm_campaign=open_studio" target="_blank" rel="noopener noreferrer" class="btn-open-studio-link">
           <svg width="14" height="14" viewBox="0 0 40 40"><path d="M17 2.4H34A5.1 5.1 0 0 1 34 12.6H12A.5 .5 0 0 1 11.5 12.1V7.8A5.4 5.4 0 0 1 17 2.4Z" fill="#ffffff"/><circle cx="20.3" cy="20.2" r="6.5" fill="#ffffff"/><path d="M11.8 27.5H33.6A5.1 5.1 0 0 1 33.6 37.7H16.7A5.4 5.4 0 0 1 11.3 32.3V28.0A.5 .5 0 0 1 11.8 27.5Z" fill="#ffffff"/></svg>
-          <span>Open in ExodeUI Studio</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span>Open Web Studio</span>
         </a>
       </div>
     </div>
@@ -1633,7 +1866,10 @@ input[type="range"]::-moz-range-thumb {
         <kbd class="kbd-badge">⌘K</kbd>
       </div>
       <div class="stats-pill" id="count">912 icons</div>
-      <a href="https://app.exodeui.com/?utm_source=exodeui.com&utm_medium=website&utm_campaign=icons_gallery&utm_content=top_bar_link" target="_blank" rel="noopener noreferrer" class="btn-top-open-studio" title="Open the full animation studio">
+      <a href="https://www.exodeui.com/?utm_source=gh_pages_icons&utm_medium=search_bar_btn" target="_blank" rel="noopener noreferrer" class="btn-top-website" title="Visit ExodeUI official website">
+        <span>exodeui.com ↗</span>
+      </a>
+      <a href="https://app.exodeui.com/?utm_source=gh_pages_icons&utm_medium=search_bar_btn" target="_blank" rel="noopener noreferrer" class="btn-top-open-studio" title="Open the full animation studio">
         <svg width="13" height="13" viewBox="0 0 40 40"><path d="M17 2.4H34A5.1 5.1 0 0 1 34 12.6H12A.5 .5 0 0 1 11.5 12.1V7.8A5.4 5.4 0 0 1 17 2.4Z" fill="#ff7a2b"/><circle cx="20.3" cy="20.2" r="6.5" fill="#ff7a2b"/><path d="M11.8 27.5H33.6A5.1 5.1 0 0 1 33.6 37.7H16.7A5.4 5.4 0 0 1 11.3 32.3V28.0A.5 .5 0 0 1 11.8 27.5Z" fill="#ff4a1c"/></svg>
         <span>Open Studio ↗</span>
       </a>
@@ -5693,6 +5929,9 @@ export function ${compName}({
           </div>
 
           <div class="insp-actions-group">
+            <a href="https://www.exodeui.com/icons/${id}/?utm_source=gh_pages_icons&utm_medium=inspector_btn" target="_blank" rel="noopener noreferrer" class="btn-visit-website-action">
+              <span>View on exodeui.com ↗</span>
+            </a>
             <a href="${openExodeUrl}" target="_blank" rel="noopener noreferrer" class="btn-open-exode-studio" id="btn-open-studio-action">
               <svg width="14" height="14" viewBox="0 0 40 40" class="exode-icon-mark"><path d="M17 2.4H34A5.1 5.1 0 0 1 34 12.6H12A.5 .5 0 0 1 11.5 12.1V7.8A5.4 5.4 0 0 1 17 2.4Z" fill="#ff7a2b"/><circle cx="20.3" cy="20.2" r="6.5" fill="#ff7a2b"/><path d="M11.8 27.5H33.6A5.1 5.1 0 0 1 33.6 37.7H16.7A5.4 5.4 0 0 1 11.3 32.3V28.0A.5 .5 0 0 1 11.8 27.5Z" fill="#ff4a1c"/></svg>
               <span>Open Studio</span>
